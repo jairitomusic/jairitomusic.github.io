@@ -29,14 +29,14 @@ body {
     --color-link: #fff;
     --color-link-hover: #ED4264;
     --color-stitle: #ED4264;
-    --fontsize-stitle: 7vw;
+    --fontsize-stitle: 9.5em;
     --color-sdesc: #ED4264;
     --color-slink: #f1f1f1;
     --color-slink-hover: #f1f1f1;
     --color-slink-bg: #000;
     --color-slink-hover-bg: #ED4264;
-    --color-nav: #ED4264;
-    --color-nav-hover: #ED3254;
+    --color-nav: #fee3b7;
+    --color-nav-hover: #ffecbb;
 }
 
 /* Fade effect */
@@ -287,7 +287,7 @@ a.demo--current {
 	border: 0;
 	background: none;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 3.5em;
 	color: var(--color-nav);
 	text-transform: uppercase;
 	text-shadow: -1px 0 #f1f1f1, 0 1px #f1f1f1, 1px 0 #f1f1f1, 0 -1px #f1f1f1;
@@ -329,6 +329,7 @@ a.demo--current {
 	color: var(--color-sdesc);
 	top: 70px;
 	left: 20px;
+	font-weight: bold;
 	text-shadow: -1px 0 #f1f1f1, 0 1px #f1f1f1, 1px 0 #f1f1f1, 0 -1px #f1f1f1;
 }
 
