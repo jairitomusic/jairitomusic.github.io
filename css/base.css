@@ -29,9 +29,9 @@ body {
     --color-link: #fff;
     --color-link-hover: #ED4264;
     --color-stitle: #ED4264;
-    --fontsize-stitle: 3.5em;
-    --fontsize-subtitle: 2.5em;
-    --color-sdesc: #ED4264;
+    --fontsize-stitle: 4em;
+    --fontsize-subtitle: 3em;
+    --color-sdesc: #f1f1f1;
     --color-slink: #f1f1f1;
     --color-slink-hover: #f1f1f1;
     --color-slink-bg: #000;
@@ -328,10 +328,10 @@ a.demo--current {
 	cursor: default;
 	font-size: var(--fontsize-subtitle);
 	color: var(--color-sdesc);
-	top: 70px;
+	top: 140px;
 	left: 20px;
 	font-weight: bold;
-	text-shadow: -1px 0 #f1f1f1, 0 1px #f1f1f1, 1px 0 #f1f1f1, 0 -1px #f1f1f1;
+	text-shadow: -1px 0 #ED4264, 0 1px #ED4264, 1px 0 #ED4264, 0 -1px #ED4264;
 }
 
 .slide__link {
