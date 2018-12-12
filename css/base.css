@@ -29,7 +29,8 @@ body {
     --color-link: #fff;
     --color-link-hover: #ED4264;
     --color-stitle: #ED4264;
-    --fontsize-stitle: 9.5em;
+    --fontsize-stitle: 3.5em;
+    --fontsize-subtitle: 2.5em;
     --color-sdesc: #ED4264;
     --color-slink: #f1f1f1;
     --color-slink-hover: #f1f1f1;
@@ -287,7 +288,7 @@ a.demo--current {
 	border: 0;
 	background: none;
 	font-weight: bold;
-	font-size: 3.5em;
+	font-size: 1.5em;
 	color: var(--color-nav);
 	text-transform: uppercase;
 	text-shadow: -1px 0 #f1f1f1, 0 1px #f1f1f1, 1px 0 #f1f1f1, 0 -1px #f1f1f1;
@@ -324,8 +325,8 @@ a.demo--current {
 
 .slide__desc {
 	position: absolute;
-	font-size: 4.5em;
 	cursor: default;
+	font-size: var(--fontsize-subtitle);
 	color: var(--color-sdesc);
 	top: 70px;
 	left: 20px;
@@ -380,7 +381,7 @@ a.demo--current {
 
 @media screen and (max-width: 55em) {
 	body {
-		padding: 0 0 4em 0;
+		padding: 0 0 0 0;
 	}
 	.content {
 		flex-direction: column;
@@ -410,7 +411,7 @@ a.demo--current {
 		margin: 0;
 	}
 	.slide__desc {
-		font-size: 1em;
+		
 	}
 	.slide__link {
 		font-size: 0.85em;
