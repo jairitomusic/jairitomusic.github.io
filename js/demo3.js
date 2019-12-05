@@ -70,10 +70,10 @@
                 <defs>
                 <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stop-color="#75ebcf">
-                        <!--animate attributeName="stop-color" values="#75ebcf; #abd9ed; #75ebcf" dur="3s" repeatCount="indefinite"></animate-->
+                        <!--animate attributeName="stop-color" values="#75ebcf; #5c51c4; #75ebcf" dur="3s" repeatCount="indefinite"></animate-->
                     </stop>
-                    <stop offset="100%" stop-color="#abd9ed">
-                        <!--animate attributeName="stop-color" values="#abd9ed; #75ebcf; #abd9ed" dur="3s" repeatCount="indefinite"></animate-->
+                    <stop offset="100%" stop-color="#5c51c4">
+                        <!--animate attributeName="stop-color" values="#5c51c4; #75ebcf; #5c51c4" dur="3s" repeatCount="indefinite"></animate-->
                     </stop>
                 </linearGradient>
                 </defs>
