@@ -27,17 +27,17 @@ body {
 	--color-text: #fff;
     --color-bg: #333;
     --color-link: #fff;
-    --color-link-hover: #ED4264;
-    --color-stitle: #ED4264;
+    --color-link-hover: #5be3c3;
+    --color-stitle: #5be3c3;
     --fontsize-stitle: 4em;
     --fontsize-subtitle: 3em;
     --color-sdesc: #f1f1f1;
     --color-slink: #f1f1f1;
     --color-slink-hover: #f1f1f1;
     --color-slink-bg: #000;
-    --color-slink-hover-bg: #ED4264;
-    --color-nav: #fee3b7;
-    --color-nav-hover: #ffecbb;
+    --color-slink-hover-bg: #5be3c3;
+    --color-nav: #5be3c3;
+    --color-nav-hover: #75ebcf;
 }
 
 /* Fade effect */
