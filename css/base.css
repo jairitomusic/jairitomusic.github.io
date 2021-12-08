@@ -27,17 +27,17 @@ body {
 	--color-text: #fff;
     --color-bg: #333;
     --color-link: #fff;
-    --color-link-hover: #9c1616;
-    --color-stitle: #9c1616;
+    --color-link-hover: #e0bf1b;
+    --color-stitle: #e0bf1b;
     --fontsize-stitle: 4.2em;
     --fontsize-subtitle: 3.5em;
-    --color-sdesc: #eb7589;
-    --color-slink: #eb7589;
-    --color-slink-hover: #eb7589;
+    --color-sdesc: #ebe894;
+    --color-slink: #ebe894;
+    --color-slink-hover: #ebe894;
     --color-slink-bg: #000;
-    --color-slink-hover-bg: #9c1616;
-    --color-nav: #9c1616;
-    --color-nav-hover: #a32141;
+    --color-slink-hover-bg: #e0bf1b;
+    --color-nav: #e0bf1b;
+    --color-nav-hover: #e0bf1b;
 }
 
 /* Fade effect */
@@ -292,7 +292,7 @@ a.demo--current {
 	font-size: 1.5em;
 	color: var(--color-nav);
 	text-transform: uppercase;
-	text-shadow: -1px 0 #eb7589, 0 1px #eb7589, 1px 0 #eb7589, 0 -1px #eb7589;
+	text-shadow: -1px 0 #ebe894, 0 1px #ebe894, 1px 0 #ebe894, 0 -1px #ebe894;
 }
 
 .slidenav__item:focus {
@@ -321,7 +321,7 @@ a.demo--current {
 	color: var(--color-stitle);
 	top: 20px;
 	left: 10px;
-	text-shadow: -1px 0 #eb7589, 0 1px #eb7589, 1px 0 #eb7589, 0 -1px #eb7589;
+	text-shadow: -1px 0 #ebe894, 0 1px #ebe894, 1px 0 #ebe894, 0 -1px #ebe894;
 }
 
 .slide__desc {
@@ -332,7 +332,7 @@ a.demo--current {
 	top: 120px;
 	left: 20px;
 	font-weight: bold;
-	text-shadow: -1px 0 #9c1616, 0 1px #9c1616, 1px 0 #9c1616, 0 -1px #9c1616;
+	text-shadow: -1px 0 #e0bf1b, 0 1px #e0bf1b, 1px 0 #e0bf1b, 0 -1px #e0bf1b;
 }
 
 .slide__link {
