@@ -10,7 +10,7 @@ html {
 }
 
 body {
-	font-family: 'Aclonica';
+	font-family: 'Rubik Dirt';
 	min-height: 100vh;
 	color: #57585c;
 	color: var(--color-text);
@@ -27,17 +27,17 @@ body {
 	--color-text: #fff;
     --color-bg: #333;
     --color-link: #fff;
-    --color-link-hover: #e0bf1b;
-    --color-stitle: #e0bf1b;
+    --color-link-hover: #35ab80;
+    --color-stitle: #35ab80;
     --fontsize-stitle: 4.2em;
     --fontsize-subtitle: 3.5em;
     --color-sdesc: #ebe894;
     --color-slink: #ebe894;
     --color-slink-hover: #ebe894;
     --color-slink-bg: #000;
-    --color-slink-hover-bg: #e0bf1b;
-    --color-nav: #e0bf1b;
-    --color-nav-hover: #e0bf1b;
+    --color-slink-hover-bg: #35ab80;
+    --color-nav: #35ab80;
+    --color-nav-hover: #35ab80;
 }
 
 /* Fade effect */
@@ -282,7 +282,7 @@ a.demo--current {
 	text-align: right;
 	padding: 2em;
 	width: 99%;
-	
+
 }
 
 .slidenav__item {
@@ -332,7 +332,7 @@ a.demo--current {
 	top: 120px;
 	left: 20px;
 	font-weight: bold;
-	text-shadow: -1px 0 #e0bf1b, 0 1px #e0bf1b, 1px 0 #e0bf1b, 0 -1px #e0bf1b;
+	text-shadow: -1px 0 #35ab80, 0 1px #35ab80, 1px 0 #35ab80, 0 -1px #35ab80;
 }
 
 .slide__link {
@@ -344,7 +344,7 @@ a.demo--current {
 	color: var(--color-slink);
 	background: var(--color-slink-bg);
 	transition: color 0.3s, background 0.3s;
-	
+
 }
 
 .slide__link:hover {
@@ -412,7 +412,7 @@ a.demo--current {
 		margin: 0;
 	}
 	.slide__desc {
-		
+
 	}
 	.slide__link {
 		font-size: 0.85em;
