@@ -1,0 +1,19 @@
+/* Basic styles for the image collage */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.image-collage {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Adjust columns based on your preference */
+  gap: 5px; /* Adjust the gap between images */
+  padding: 10px;
+}
+
+.image-collage img {
+  width: 100%;
+  height: auto;
+  border-radius: 3%; /* Apply round borders to images */
+  border: 3px solid white; /* Add a border for better visibility */
+}

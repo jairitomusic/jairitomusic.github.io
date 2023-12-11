@@ -10,7 +10,7 @@ html {
 }
 
 body {
-	font-family: 'Rubik Dirt';
+	font-family: 'Caprasimo';
 	min-height: 100vh;
 	color: #57585c;
 	color: var(--color-text);
@@ -27,17 +27,17 @@ body {
 	--color-text: #fff;
     --color-bg: #333;
     --color-link: #fff;
-    --color-link-hover: #35ab80;
-    --color-stitle: #35ab80;
+    --color-link-hover: #a62e74;
+    --color-stitle: #a62e74;
     --fontsize-stitle: 4.2em;
     --fontsize-subtitle: 3.5em;
-    --color-sdesc: #ebe894;
-    --color-slink: #ebe894;
-    --color-slink-hover: #ebe894;
+    --color-sdesc: #4bb3e3;
+    --color-slink: #4bb3e3;
+    --color-slink-hover: #4bb3e3;
     --color-slink-bg: #000;
-    --color-slink-hover-bg: #35ab80;
-    --color-nav: #35ab80;
-    --color-nav-hover: #35ab80;
+    --color-slink-hover-bg: #a62e74;
+    --color-nav: #a62e74;
+    --color-nav-hover: #a62e74;
 }
 
 /* Fade effect */
@@ -292,7 +292,7 @@ a.demo--current {
 	font-size: 1.5em;
 	color: var(--color-nav);
 	text-transform: uppercase;
-	text-shadow: -1px 0 #ebe894, 0 1px #ebe894, 1px 0 #ebe894, 0 -1px #ebe894;
+	text-shadow: -1px 0 #4bb3e3, 0 1px #4bb3e3, 1px 0 #4bb3e3, 0 -1px #4bb3e3;
 }
 
 .slidenav__item:focus {
@@ -321,7 +321,7 @@ a.demo--current {
 	color: var(--color-stitle);
 	top: 20px;
 	left: 10px;
-	text-shadow: -1px 0 #ebe894, 0 1px #ebe894, 1px 0 #ebe894, 0 -1px #ebe894;
+	text-shadow: -1px 0 #4bb3e3, 0 1px #4bb3e3, 1px 0 #4bb3e3, 0 -1px #4bb3e3;
 }
 
 .slide__desc {
@@ -332,7 +332,7 @@ a.demo--current {
 	top: 120px;
 	left: 20px;
 	font-weight: bold;
-	text-shadow: -1px 0 #35ab80, 0 1px #35ab80, 1px 0 #35ab80, 0 -1px #35ab80;
+	text-shadow: -1px 0 #a62e74, 0 1px #a62e74, 1px 0 #a62e74, 0 -1px #a62e74;
 }
 
 .slide__link {
