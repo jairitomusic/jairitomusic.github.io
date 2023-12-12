@@ -8,12 +8,12 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const imageCollage = document.querySelector('.image-collage');
-  const imageCount = 20;
+  const imageCount = 40;
   const imageUrls = [];
 
   // Generating array of image URLs
   for (let i = 1; i <= imageCount; i++) {
-    const imageUrl = `img/${i.toString().padStart(2, '0')}.jpg`; // Assuming images are in a folder named "images"
+    const imageUrl = `img/int/${i.toString().padStart(2, '0')}.jpg`; // Assuming images are in a folder named "images"
     imageUrls.push(imageUrl);
   }
 

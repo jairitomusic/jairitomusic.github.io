@@ -6,7 +6,7 @@ body {
 
 .image-collage {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Adjust columns based on your preference */
+  grid-template-columns: repeat(8, 1fr); /* Adjust columns based on your preference */
   gap: 5px; /* Adjust the gap between images */
   padding: 10px;
 }
