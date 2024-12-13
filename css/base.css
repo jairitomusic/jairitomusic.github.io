@@ -10,7 +10,7 @@ html {
 }
 
 body {
-	font-family: 'Caprasimo';
+	font-family: "Fascinate Inline", system-ui;;
 	min-height: 100vh;
 	color: #57585c;
 	color: var(--color-text);
@@ -27,17 +27,17 @@ body {
 	--color-text: #fff;
     --color-bg: #333;
     --color-link: #fff;
-    --color-link-hover: #a62e74;
-    --color-stitle: #a62e74;
+    --color-link-hover: #6fd9ab;
+    --color-stitle: #6fd9ab;
     --fontsize-stitle: 4.2em;
     --fontsize-subtitle: 3.5em;
-    --color-sdesc: #4bb3e3;
-    --color-slink: #4bb3e3;
-    --color-slink-hover: #4bb3e3;
+    --color-sdesc: #c9285b;
+    --color-slink: #c9285b;
+    --color-slink-hover: #c9285b;
     --color-slink-bg: #000;
-    --color-slink-hover-bg: #a62e74;
-    --color-nav: #a62e74;
-    --color-nav-hover: #a62e74;
+    --color-slink-hover-bg: #6fd9ab;
+    --color-nav: #6fd9ab;
+    --color-nav-hover: #6fd9ab;
 }
 
 /* Fade effect */
@@ -272,7 +272,7 @@ a.demo--current {
 	background-size: cover;
 	background-position: 50% 50%;
 	-webkit-filter: opacity(30%) blur(6px);
-	filter:opacity(50%) blur(6px);
+	filter:opacity(75%) blur(6px);
 }
 
 .slidenav {
@@ -292,7 +292,7 @@ a.demo--current {
 	font-size: 1.5em;
 	color: var(--color-nav);
 	text-transform: uppercase;
-	text-shadow: -1px 0 #4bb3e3, 0 1px #4bb3e3, 1px 0 #4bb3e3, 0 -1px #4bb3e3;
+	text-shadow: -1px 0 #c9285b, 0 1px #c9285b, 1px 0 #c9285b, 0 -1px #c9285b;
 }
 
 .slidenav__item:focus {
@@ -321,7 +321,7 @@ a.demo--current {
 	color: var(--color-stitle);
 	top: 20px;
 	left: 10px;
-	text-shadow: -1px 0 #4bb3e3, 0 1px #4bb3e3, 1px 0 #4bb3e3, 0 -1px #4bb3e3;
+	text-shadow: -1px 0 #c9285b, 0 1px #c9285b, 1px 0 #c9285b, 0 -1px #c9285b;
 }
 
 .slide__desc {
@@ -332,7 +332,7 @@ a.demo--current {
 	top: 120px;
 	left: 20px;
 	font-weight: bold;
-	text-shadow: -1px 0 #a62e74, 0 1px #a62e74, 1px 0 #a62e74, 0 -1px #a62e74;
+	text-shadow: -1px 0 #6fd9ab, 0 1px #6fd9ab, 1px 0 #6fd9ab, 0 -1px #6fd9ab;
 }
 
 .slide__link {

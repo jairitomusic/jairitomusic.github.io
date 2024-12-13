@@ -69,11 +69,11 @@
             this.DOM.svg.innerHTML = `
                 <defs>
                 <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#4bb3e3">
-                        <!--animate attributeName="stop-color" values="#4bb3e3; #a62e74; #4bb3e3" dur="3s" repeatCount="indefinite"></animate-->
+                    <stop offset="0%" stop-color="#c9285b">
+                        <!--animate attributeName="stop-color" values="#c9285b; #6fd9ab; #c9285b" dur="3s" repeatCount="indefinite"></animate-->
                     </stop>
-                    <stop offset="100%" stop-color="#a62e74">
-                        <!--animate attributeName="stop-color" values="#a62e74; #4bb3e3; #a62e74" dur="3s" repeatCount="indefinite"></animate-->
+                    <stop offset="100%" stop-color="#6fd9ab">
+                        <!--animate attributeName="stop-color" values="#6fd9ab; #c9285b; #6fd9ab" dur="3s" repeatCount="indefinite"></animate-->
                     </stop>
                 </linearGradient>
                 </defs>
