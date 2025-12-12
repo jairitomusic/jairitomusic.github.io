@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jairo's Top Albums of 2025 — Rock Zine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+  <rect width='64' height='64' rx='8' fill='white'/>
+  <circle cx='32' cy='32' r='26' fill='black'/>
+  <circle cx='32' cy='32' r='18' fill='none' stroke='gray' stroke-width='2'/>
+  <circle cx='32' cy='32' r='10' fill='none' stroke='gray' stroke-width='2'/>
+  <circle cx='32' cy='32' r='4' fill='lightgray'/>
+</svg>">
+  <style>
+    /* ---------- Base & Variables ---------- */
+    :root {
+      --bg: #0b0c10;
+      --text: #ffffff;
+      --muted: #cfd2d6;
+      --accent: #ff6b6b;    /* dynamic */
+      --accent-2: #824dff;  /* dynamic */
+      --accent-3: #4dd0ff;  /* dynamic */
+      --label-bg: rgba(0,0,0,0.45);
+      --label-stroke: rgba(255,255,255,0.07);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0b0c10; --text: #ffffff; --muted: #cfd2d6; }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    /* ---------- Adaptive Background ---------- */
+    .bg {
+      position: fixed; inset: 0; z-index: -2;
+      overflow: hidden;
+    }
+    .bg__image {
+      position: absolute; inset: -20px;
+      background-size: cover;
+      background-position: center;
+      filter: blur(40px) saturate(1.2) brightness(0.9);
+      transform: scale(1.06);
+      transition: background-image 0.4s ease, filter 0.6s ease;
+      will-change: transform, filter;
+    }
+    .bg__tint {
+      position: absolute; inset: 0; z-index: -1;
+      background:
+        radial-gradient(1200px 600px at 80% 0%, color-mix(in oklab, var(--accent) 65%, transparent), transparent 70%),
+        radial-gradient(800px 500px at 0% 100%, color-mix(in oklab, var(--accent-2) 55%, transparent), transparent 70%),
+        radial-gradient(700px 400px at 100% 100%, color-mix(in oklab, var(--accent-3) 50%, transparent), transparent 75%);
+      mix-blend-mode: soft-light;
+      transition: background 0.6s ease;
+    }
+
+    /* ---------- Layout ---------- */
+    .wrap {
+      position: relative;
+      display: grid;
+      place-items: center;
+      height: 100svh;
+      padding: clamp(16px, 3vw, 32px);
+    }
+
+    .topbar {
+      position: fixed; top: 16px; left: 16px; right: 16px;
+      display: flex; align-items: center; gap: 12px;
+      pointer-events: none;
+    }
+
+    .badge {
+      pointer-events: auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--accent) 14%, #111);
+      border: 1px solid color-mix(in oklab, var(--accent) 30%, #333);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px color-mix(in oklab, var(--accent) 20%, transparent);
+      font-weight: 600;
+      font-family: 'Architects Daughter', Arial, sans-serif;
+      letter-spacing: 0.06em;
+    }
+
+    .progress {
+      flex: 1; height: 6px; border-radius: 999px; overflow: hidden;
+      background: rgba(255,255,255,0.12);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+    .progress__bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+      transition: width 600ms cubic-bezier(.25,.8,.25,1);
+    }
+
+    /* ---------- The Card ---------- */
+    .card {
+      width: min(980px, 92vw);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: clamp(20px, 3vw, 36px);
+      align-items: center;
+
+      background: color-mix(in oklab, var(--accent) 12%, rgba(255,255,255,0.04));
+      border: 1px solid color-mix(in oklab, var(--accent) 30%, rgba(255,255,255,0.12));
+      border-radius: 24px;
+      padding: clamp(20px, 3vw, 28px);
+      backdrop-filter: blur(12px) saturate(1.1);
+      box-shadow: 0 25px 60px color-mix(in oklab, var(--accent) 25%, transparent);
+
+      transform-style: preserve-3d;
+      will-change: transform, opacity, filter;
+    }
+
+    @media (max-width: 820px) {
+      .card { grid-template-columns: 1fr; }
+    }
+
+    /* Cover with 3D tilt */
+    .cover-wrap { position: relative; perspective: 1000px; }
+    .cover {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 20px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.35),
+        0 0 0 1px rgba(255,255,255,0.15);
+      transition: transform 300ms ease, box-shadow 300ms ease;
+      will-change: transform;
+    }
+    .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cover:hover {
+      box-shadow:
+        0 25px 65px color-mix(in oklab, var(--accent) 25%, rgba(0,0,0,0.5)),
+        0 0 0 1px rgba(255,255,255,0.22);
+    }
+
+    /* ---------- Fancy Labels (Rock Zine vibes) ---------- */
+    .meta { display: grid; gap: 8px; }
+
+    /* Generic field layout */
+    .field {
+      display: flex; align-items: baseline; gap: 12px; position: relative;
+      padding: 6px 10px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.03);
+      overflow: visible;
+    }
+
+    /* Label — magazine masthead style */
+    .label {
+      font-family: 'Architects Daughter', sans-serif;
+      font-size: clamp(8px, 1vw, 12px);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.35), rgba(255,255,255,0.02));
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 1px 0 var(--label-stroke);
+      color: var(--muted);
+      text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+      transform: rotate(-2deg) translateY(-2px);
+      border: 1px solid rgba(255,255,255,0.04);
+      flex-shrink: 0;
+    }
+
+    /* Decorative angled tear behind the label */
+    .label::before {
+      content: '';
+      position: absolute; left: -22px; top: 50%; transform: translateY(-50%) rotate(-12deg);
+      width: 16px; height: 70%; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+      border-radius: 2px; opacity: 0.6; filter: blur(0.6px);
+    }
+
+    /* Value styles (big, expressive) */
+    .value {
+      font-family: 'Architects Daughter', Georgia, serif;
+      color: var(--text);
+      text-shadow: 0 10px 30px color-mix(in oklab, var(--accent) 20%, transparent);
+    }
+
+    .pos-row .value {
+      font-size: clamp(28px, 2vw, 32px);
+      letter-spacing: -0.02em;
+      display: inline-flex; align-items: baseline; gap: 12px;
+    }
+
+    .artist-row .value {
+      font-size: clamp(28px, 2vw, 32px);
+      font-weight: 50;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-family: 'Architects Daughter', sans-serif;
+    }
+
+    .title-row .value {
+      font-size: clamp(28px, 2vw, 32px);
+      font-weight: 50;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      background-image: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+      padding-right: 6px;
+    }
+
+    /* Slight decorative underline for the title */
+    .title-row .value::after {
+      content: '';
+      display: block;
+      width: 62%; height: 6px; border-radius: 4px; margin-top: 8px;
+      background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 55%, transparent), color-mix(in oklab, var(--accent-2) 45%, transparent));
+      opacity: 0.9;
+      transform: skewX(-8deg);
+    }
+
+    /* small hint area */
+    .hint { color: var(--muted); font-size: 14px; opacity: 0.85; }
+
+    .cta { margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      font-family: 'Architects Daughter', sans-serif;
+      appearance: none; border: none; border-radius: 12px;
+      padding: 12px 16px; font-weight: 700; color: white;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 28px color-mix(in oklab, var(--accent) 22%, transparent);
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 300ms ease, filter 120ms ease;
+    }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    .btn:active { transform: translateY(0); filter: brightness(0.98); }
+    .btn[disabled] { cursor: not-allowed; opacity: 0.5; filter: grayscale(0.4) brightness(0.9); }
+
+    /* In/Out transitions for card with direction */
+    .card.enter { animation: cardIn 640ms cubic-bezier(.22,1,.36,1) both; }
+    .card.exit-forward { animation: cardOutLeft 420ms cubic-bezier(.55,.085,.68,.53) both; }
+    .card.exit-back { animation: cardOutRight 420ms cubic-bezier(.55,.085,.68,.53) both; }
+
+    @keyframes cardIn {
+      0% { opacity: 0; transform: translateY(24px) scale(0.98); filter: blur(4px); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+    @keyframes cardOutLeft {
+      0% { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+      100% { opacity: 0; transform: translateX(-24px) scale(0.98); filter: blur(4px); }
+    }
+    @keyframes cardOutRight {
+      0% { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+      100% { opacity: 0; transform: translateX(24px) scale(0.98); filter: blur(4px); }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .bg__image { filter: blur(18px) saturate(1) brightness(0.9); transform: none; }
+      .card.enter, .card.exit-forward, .card.exit-back, .pos .num { animation: none; }
+      .btn { transition: none; }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Adaptive background -->
+  <div class="bg">
+    <div id="bg-img" class="bg__image" aria-hidden="true"></div>
+    <div class="bg__tint" aria-hidden="true"></div>
+  </div>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="badge">Jairito’s Picks</div>
+    <div class="progress" aria-label="Progress">
+      <div id="progressBar" class="progress__bar"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- Main card -->
+    <div id="card" class="card" role="region" aria-live="polite">
+      <div class="cover-wrap">
+        <div class="cover" id="coverTilt">
+          <img id="coverImg" src="" alt="Album cover" />
+        </div>
+      </div>
+      <div class="meta">
+
+        <!-- Position field: label + big value -->
+        <div class="field pos-row" aria-label="Position in list">
+          <div class="label" aria-hidden="true">Position</div>
+          <div id="posNum" class="value">30</div>
+        </div>
+
+        <!-- Artist field: small masthead-like label + artist name -->
+        <div class="field artist-row">
+          <div class="label" aria-hidden="true">Artist</div>
+          <div id="artist" class="value">—</div>
+        </div>
+
+        <!-- Title field: the album title with decorative underline -->
+        <div class="field title-row">
+          <div class="label" aria-hidden="true">Album</div>
+          <div id="title" class="value">—</div>
+        </div>
+
+        <div class="cta">
+          <button id="prevBtn" class="btn" aria-label="Previous album">Previous</button>
+          <button id="nextBtn" class="btn" aria-label="Next album">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* --------------------------- Data --------------------------- */
+	const albums = [
+	  { pos: 30, artist: "DRAIN",                               title: "...IS YOUR FRIEND",                        cover: "https://i.scdn.co/image/ab67616d0000b273548f6e2f348f75488693d62a" },
+	  { pos: 29, artist: "SUZZALLO",                             title: "THE QUIET YEAR",                            cover: "https://i.scdn.co/image/ab67616d0000b2731f716753680f0453a3fc2d4a" },
+	  { pos: 28, artist: "DIE SPITZ",                             title: "SOMETHING TO CONSUME",                     cover: "https://i.scdn.co/image/ab67616d0000b2739cda00316ee74d5ad0b4aa73" },
+	  { pos: 27, artist: "SUPERCHUNK",                            title: "SONGS IN THE KEY OF YIKES",                cover: "https://i.scdn.co/image/ab67616d0000b2730a13dac76a6f70d544c989b5" },
+	  { pos: 26, artist: "FRANKIE AND THE WITCH FINGERS",         title: "TRASH CLASSIC",                             cover: "https://i.scdn.co/image/ab67616d0000b273718a01f995f91e9a6ff1a844" },
+	  { pos: 25, artist: "TEEN MORTGAGE",                         title: "DEVIL ULTRASONIC DREAM",                    cover: "https://i.scdn.co/image/ab67616d0000b2738532fad382bce70904bc6591" },
+	  { pos: 24, artist: "WOLF ALICE",                             title: "THE CLEARING",                              cover: "https://i.scdn.co/image/ab67616d0000b273789ef6189aa0777e70bf50b4" },
+	  { pos: 23, artist: "THRICE",                                 title: "HORIZONS / WEST",                           cover: "https://i.scdn.co/image/ab67616d0000b273ccae8ae1a616fa75a886c8c9" },
+	  { pos: 22, artist: "BLACK MAP",                               title: "HEX",                                       cover: "https://i.scdn.co/image/ab67616d0000b27317abd7d98e60e32126a3d890" },
+	  { pos: 21, artist: "GHOST",                                  title: "SKELETÁ",                                   cover: "https://i.scdn.co/image/ab67616d0000b27337b6696c5c5a40ce24b76e1c" },
+	  { pos: 20, artist: "THE VINTAGE CARAVAN",                    title: "PORTALS",                                   cover: "https://i.scdn.co/image/ab67616d0000b2737ec02454143ea5a1af9b0ad4" },
+	  { pos: 19, artist: "THE HIVES",                               title: "THE HIVES FOREVER FOREVER THE HIVES",     cover: "https://i.scdn.co/image/ab67616d0000b2734c63f7d697dc72e928fddbfb" },
+	  { pos: 18, artist: "WINONA FIGHTER",                          title: "MY APOLOGIES TO THE CHEF",                cover: "https://i.scdn.co/image/ab67616d0000b27310060bb2baf71f9b5ddf01ea" },
+	  { pos: 17, artist: "BIFFY CLYRO",                             title: "FUTIQUE",                                  cover: "https://i.scdn.co/image/ab67616d0000b273ad80d5b8e03843adfbb7abb0" },
+	  { pos: 16, artist: "BON IVER",                                 title: "SABLE, fABLE",                             cover: "https://i.scdn.co/image/ab67616d0000b27330d93b9cce660d4f56770efb" },
+	  { pos: 15, artist: "FLORENCE + THE MACHINE",                  title: "EVERYBODY SCREAM",                         cover: "https://i.scdn.co/image/ab67616d0000b27306272cebe18d71e7e4629a38" },
+	  { pos: 14, artist: "DEAFHEAVEN",                           title: "LONELY PEOPLE WITH POWER",                cover: "https://i.scdn.co/image/ab67616d0000b2732b6889e803c1e1334c0c2d75" },
+	  { pos: 13, artist: "THE HELLACOPTERS",                          title: "OVERDRIVER",                               cover: "https://i.scdn.co/image/ab67616d0000b273c8b6db6dac7ad4b0dfc3ba3d" },
+	  { pos: 12, artist: "HAYLEY WILLIAMS",                        title: "EGO DEATH AT A BACHELORETTE PARTY",       cover: "https://i.scdn.co/image/ab67616d0000b2734f422ed700af8715b23326af" },
+	  { pos: 11, artist: "GEESE",                                 title: "GETTING KILLED",                            cover: "https://i.scdn.co/image/ab67616d0000b27345e82ae0372a50834825c018" },
+	  { pos: 10, artist: "MARUJA",                                title: "PAIN TO POWER",                             cover: "https://i.scdn.co/image/ab67616d0000b27326c5076d5f6910f8769174ce" },
+	  { pos: 9,  artist: "SHARON VAN ETTEN & THE ATTACHMENT THEORY", title: "S/T",                                    cover: "https://i.scdn.co/image/ab67616d0000b2736b8195d70fbac33ed740c686" },
+	  { pos: 8,  artist: "CHEVELLE",                                 title: "BRIGHT AS BLASPHEMY",                      cover: "https://i.scdn.co/image/ab67616d0000b273bf8e2fa7cc941431d276ff2c" },
+	  { pos: 7,  artist: "SCOWL",                                    title: "ARE WE ALL ANGELS",                        cover: "https://i.scdn.co/image/ab67616d0000b27383e46c300fb42415a6406031" },
+	  { pos: 6,  artist: "SPIRITBOX",                                 title: "TSUNAMI SEA",                              cover: "https://i.scdn.co/image/ab67616d0000b273ca5c3280d995a78c34bdf210" },
+	  { pos: 5,  artist: "DEFTONES",                                title: "PRIVATE MUSIC",                            cover: "https://i.scdn.co/image/ab67616d0000b27317e4d3ab44b89f1b62dcc2d6" },
+	  { pos: 4,  artist: "TURNSTILE",                                  title: "NEVER ENOUGH",                             cover: "https://i.scdn.co/image/ab67616d0000b2738386e4a4fb9d20e5008f4d71" },
+	  { pos: 3,  artist: "LA DISPUTE",                                 title: "NO ONE WAS DRIVING THE CAR",             cover: "https://i.scdn.co/image/ab67616d0000b27357e7a35fd8ee296bab809faa" },
+	  { pos: 2,  artist: "THE LAST DINNER PARTY",                    title: "FROM THE PYRE",                             cover: "https://i.scdn.co/image/ab67616d0000b273d8a9409f415a30da0c8eca39" },
+	  { pos: 1,  artist: "CLIPSE",                                     title: "LET GOD SORT EM OUT",                      cover: "https://i.scdn.co/image/ab67616d0000b273ef854fe1d04279372a96f3d6" },
+	];
+
+    let idx = 0; // no album shown yet
+
+    /* ---------------------- DOM & Elements ---------------------- */
+    const coverImg = document.getElementById('coverImg');
+    const coverTilt = document.getElementById('coverTilt');
+    const posNum   = document.getElementById('posNum');
+    const artistEl = document.getElementById('artist');
+    const titleEl  = document.getElementById('title');
+    const prevBtn  = document.getElementById('prevBtn');
+    const nextBtn  = document.getElementById('nextBtn');
+    const card     = document.getElementById('card');
+    const bgImg    = document.getElementById('bg-img');
+    const progressBar = document.getElementById('progressBar');
+
+    /* ----------------------- Utilities -------------------------- */
+    function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+    function rgbToHsl(r, g, b) {
+      r /= 255; g /= 255; b /= 255;
+      const max = Math.max(r, g, b), min = Math.min(r, g, b);
+      let h, s, l = (max + min) / 2;
+      if (max === min) { h = s = 0; }
+      else {
+        const d = max - min; s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+        } h /= 6;
+      }
+      return [h, s, l];
+    }
+    function hslToRgb(h, s, l) {
+      let r, g, b;
+      if (s === 0) { r = g = b = l; }
+      else {
+        const hue2rgb = (p, q, t) => {
+          if (t < 0) t += 1;
+          if (t > 1) t -= 1;
+          if (t < 1/6) return p + (q - p) * 6 * t;
+          if (t < 1/2) return q;
+          if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+          return p;
+        };
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+      }
+      return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+    }
+    function toHex([r,g,b]) { return '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0')).join(''); }
+    function luminance([r,g,b]) {
+      const srgb = [r,g,b].map(v => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055)/1.055, 2.4);
+      });
+      return 0.2126*srgb[0] + 0.7152*srgb[1] + 0.0722*srgb[2];
+    }
+
+    // Extract a simple average color from the cover (safe-fallback if CORS blocks canvas)
+    async function extractAccentFromImage(url) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.src = url;
+        img.onload = () => {
+          try {
+            const canvas = document.createElement('canvas');
+            const size = 32;
+            canvas.width = size; canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, size, size);
+            const { data } = ctx.getImageData(0, 0, size, size);
+            let r=0,g=0,b=0, count=0;
+            for (let i=0; i<data.length; i+=4) {
+              const rr = data[i], gg = data[i+1], bb = data[i+2], aa = data[i+3];
+              if (aa < 128) continue;
+              r += rr; g += gg; b += bb; count++;
+            }
+            if (!count) throw new Error('no pixels');
+            r = Math.round(r / count); g = Math.round(g / count); b = Math.round(b / count);
+            const [h,s,l] = rgbToHsl(r,g,b);
+            const accent     = toHex([r,g,b]);
+            const accent2RGB = hslToRgb((h + 0.12) % 1, clamp(s*0.95,0,1), clamp(l*0.9,0,1));
+            const accent3RGB = hslToRgb((h + 0.27) % 1, clamp(s*0.75,0,1), clamp(l*1.18,0,1));
+            resolve({
+              accent,
+              accent2: toHex(accent2RGB),
+              accent3: toHex(accent3RGB),
+              textOnAccent: luminance([r,g,b]) > 0.55 ? '#111111' : '#ffffff'
+            });
+          } catch (err) {
+            resolve({ accent: '#7a7a7a', accent2: '#9a9a9a', accent3: '#bdbdbd', textOnAccent: '#ffffff' });
+          }
+        };
+        img.onerror = () => resolve({ accent: '#7a7a7a', accent2: '#9a9a9a', accent3: '#bdbdbd', textOnAccent: '#ffffff' });
+      });
+    }
+
+    function setThemeColors({accent, accent2, accent3}) {
+      const root = document.documentElement;
+      root.style.setProperty('--accent', accent);
+      root.style.setProperty('--accent-2', accent2);
+      root.style.setProperty('--accent-3', accent3);
+    }
+
+    function updateProgress() {
+      const total = albums.length;
+      const shown = idx + 1; // idx is zero-based after Start
+      const pct = clamp((shown / total) * 100, 0, 100);
+      progressBar.style.width = `${pct}%`;
+    }
+
+    function setButtonsState() {
+      prevBtn.disabled = (idx <= 0);
+      nextBtn.disabled = (idx >= albums.length - 1);
+    }
+
+    /* --------------------- Rendering Logic ---------------------- */
+    async function showAlbum(nextIndex, direction = 'forward') {
+      const a = albums[nextIndex];
+
+      // Exit animation (direction-aware)
+      card.classList.remove('enter', 'exit-forward', 'exit-back');
+      card.classList.add(direction === 'back' ? 'exit-back' : 'exit-forward');
+      await new Promise(res => setTimeout(res, 220)); // slight overlap
+
+      // Background first (blurred cover)
+      bgImg.style.backgroundImage = `url('${a.cover}')`;
+
+      // Extract accent colors (with fallback)
+      const palette = await extractAccentFromImage(a.cover);
+      setThemeColors(palette);
+
+      // Update card content
+      coverImg.src = a.cover;
+      coverImg.alt = `${a.artist} — ${a.title} (cover)`;
+      posNum.textContent = a.pos;
+      artistEl.textContent = a.artist;
+      titleEl.textContent = a.title;
+
+      // Re-enter animation
+      card.classList.remove('exit-forward', 'exit-back'); void card.offsetWidth;
+      card.classList.add('enter');
+
+      updateProgress();
+      setButtonsState();
+    }
+
+    /* ----------------------- Controls --------------------------- */
+    function goForward() {
+      if (idx < albums.length - 1) {
+        idx++;
+        showAlbum(idx, 'forward');
+      }
+    }
+    function goBack() {
+      if (idx > 0) {
+        idx--;
+        showAlbum(idx, 'back');
+      }
+    }
+
+    nextBtn.addEventListener('click', goForward);
+    prevBtn.addEventListener('click', goBack);
+
+    document.addEventListener("DOMContentLoaded", function () {
+          idx = 0;
+          showAlbum(idx, 'forward');
+    });
+
+    // 3D tilt effect for cover
+    coverTilt.addEventListener('mousemove', (e) => {
+      const rect = coverTilt.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rx = (0.5 - y) * 8;          // rotate X
+      const ry = (x - 0.5) * 8;          // rotate Y
+      coverTilt.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    coverTilt.addEventListener('mouseleave', () => {
+      coverTilt.style.transform = 'rotateX(0) rotateY(0)';
+    });
+
+    // Initial state
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+  </script>
+</body>
+</html>
